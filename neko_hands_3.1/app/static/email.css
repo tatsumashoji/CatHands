@@ -1,0 +1,19 @@
+ .pure-menu {
+    background: transparent;
+    border: none;
+    text-align: left;
+}
+     .pure-menu-item {
+        color: #fff;
+        margin-left: 1em;
+    }
+
+
+/*
+ * -- EMAIL STYLES --
+ * Styles relevant to the email messages, labels, counts, and more.
+ */
+.email-count {
+    color: rgb(75, 113, 151);
+}
+

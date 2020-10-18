@@ -1,0 +1,84 @@
+{% extends base %}
+
+
+
+{% block preamble %}  
+<head>
+    <!-- Pure CSS -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="app/static/blog.css">    
+    <link rel="stylesheet" href="app/static/email.css">    
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app/static/pdata.js"></script>
+</head>
+{% endblock %}
+
+
+
+{% block contents %}
+<body>
+
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+        <img class="pure-u-1" src="app/static/image/status.png">
+
+        <h2 style="margin-left:0.5em; color:#E48B1D;"> Target Information <h2>      
+        <div class="pure-menu">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item">{{embed(roots.FILENAME)}}</li>
+                <li class="pure-menu-item">{{embed(roots.COLUMNS)}}</li>
+                <li class="pure-menu-item">{{embed(roots.RECORDS)}}</li>
+            </ul>
+        </div>
+            
+        <h2 style="margin-left:0.5em; color:#E48B1D;"> Selected Information <h2>      
+        <div class="pure-menu">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item">{{embed(roots.COLUMNS)}}</li>
+                <li class="pure-menu-item">{{embed(roots.SELECTED_RECORDS)}}</li>
+            </ul>
+        </div>
+
+        <h2 style="margin-left:0.5em; color:#E48B1D;"> Commands <h2>      
+        <div class="pure-menu">
+            <div class="pure-menu pure-menu-horizontal">
+                <ul>
+                    <li class="pure-menu-item">{{embed(roots.DL_BUTTON)}}</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <h2 style="margin-left:0.5em; color:#E48B1D;"> Account <h2>
+        <div class="pure-menu">
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"> {{embed(roots.ACCOUNT_NAME)}} </li>
+                <li class="pure-menu-item"> {{embed(roots.ACCOUNT_PLAN)}} </li>
+            </ul>
+        </div>
+        
+    </div>
+
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+
+        <div>
+            <!-- Graph Area -->
+            <div class="posts">
+                <section class="post">
+                {{embed(roots.tabs)}}
+                </section>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{{embed(roots.DL_EXEC)}}                        
+</body>
+{% endblock %}
